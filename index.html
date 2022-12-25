@@ -11,9 +11,26 @@
     <meta name="copyright" content="陈通" />
     <link rel="shortcut icon" type="image/x-icon" href="./icon.png" sizes="192x192" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="index2.css" />
+    <link rel="stylesheet" href="./ui.css" />
+    <style>
+        #canvas {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%) translateY(-20%);
+            top: 0%;
+        }
+    </style>
 </head>
 
 <body>
+    <!-- <canvas id="canvas"></canvas> -->
+    <!-- <div class="ui">
+        <input class="ui-input" type="text" placeholder="关键词通过逗号和空格分隔" />
+        <span class="ui-return">↵</span>
+    </div> -->
+    <p class="shine">陈诗意的圣诞树🎄Merry Christmas</p>
 
     <div class="snow-container">
         <div class="snow foreground"></div>
@@ -23,8 +40,104 @@
         <div class="snow background"></div>
         <div class="snow background layer"></div>
     </div>
-    <canvas id="tree"></canvas>
-    <script src="./index.js"></script>
+    <div class="tree">
+        <div class="star">
+            <div class="star-in"></div>
+        </div>
+        <!--树叶-->
+        <div class="leaf-box">
+            <div class="leaf">
+                <div class="edge"></div>
+                <div class="edge right"></div>
+            </div>
+            <div class="leaf">
+                <div class="edge"></div>
+                <div class="edge right"></div>
+            </div>
+            <div class="leaf">
+                <div class="edge"></div>
+                <div class="edge right"></div>
+            </div>
+            <div class="leaf">
+                <div class="edge"></div>
+                <div class="edge right"></div>
+            </div>
+            <div class="leaf">
+                <div class="edge"></div>
+                <div class="edge right"></div>
+            </div>
+        </div>
+        <!--树干-->
+        <div class="trunk"></div>
+        <!--彩色的球-->
+        <div class="ball-box">
+            <div class="ball b1"></div>
+            <div class="ball b2"></div>
+            <div class="ball b3"></div>
+            <div class="ball b4"></div>
+            <div class="ball b5"></div>
+            <div class="ball b6"></div>
+            <div class="ball b7"></div>
+            <div class="ball b8"></div>
+            <div class="ball b9"></div>
+        </div>
+        <!--闪烁--->
+        <div class="sparkle">
+            <span>✦</span>
+            <span>✦</span>
+            <span>✦</span>
+            <span>✦</span>
+            <span>✦</span>
+            <span>✦</span>
+        </div>
+        <div class="blink">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+    <div style="position: fixed;right: 15px;bottom: 20px;">
+        <div class="shine" style="color:red" id="time">
+            2022.12.25
+        </div>
+        <div class="flicker" style="text-align: right;font-size: 20px;color: #eee;" id="name">
+            By ct
+        </div>
+    </div>
+    <script>
+        let time = document.getElementById("time")
+        let name = document.getElementById("name")
+        let body = document.getElementsByTagName("body")[0]
+        time.onclick = function (event) {
+            event.stopPropagation()
+            time.style.display = 'none'
+        }
+        console.log('点击了')
+
+        name.onclick = function (event) {
+            event.stopPropagation()
+
+            name.style.display = 'none'
+        }
+        body.onclick = function () {
+            console.log('点击了')
+            if (name.style.display === 'none' && time.style.display === 'none') {
+                console.log('点击了')
+                name.style.display = 'block'
+                time.style.display = 'block'
+
+            }
+
+        }
+
+
+
+
+    </script>
 </body>
 
 </html>

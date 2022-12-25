@@ -1,0 +1,55 @@
+.shine {
+    font-family: "Microsoft YaHei";
+    font-size: 20px;
+    margin-bottom: 10%;
+    background: -webkit-linear-gradient(left, rgb(255, 0, 64), rgb(187, 255, 0)) 0 0 no-repeat;
+    /*设置线性渐变*/
+    -webkit-background-size: 160px;
+    /*设置背景大小*/
+    -webkit-background-clip: text;
+    /*背景被裁剪到文字*/
+    -webkit-text-fill-color: rgba(230, 236, 237, 0.3);
+    /*设置文字的填充颜色*/
+    -webkit-animation: shine 3s infinite;
+    /*设置动画*/
+}
+
+@-webkit-keyframes shine {
+
+    /*创建动画*/
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+.flicker {
+    color: #eaeaea;
+    /*设置文字颜色*/
+    font-size: 14px;
+    /*设置字体大小*/
+    font-weight: bolder;
+    /*设置字体粗细*/
+    -webkit-animation: flicker 2s infinite;
+    /*设置动画*/
+}
+
+@-webkit-keyframes flicker {
+
+    /*创建动画*/
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+
+}
